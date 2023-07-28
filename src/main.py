@@ -21,6 +21,6 @@ while True:
         print(text[14:-3])
         cmd = text[14:-3]
 
-        if cmd == 'open chrome':
+        if cmd == 'open browser':
             subprocess.call(
                 'C://Program Files//BraveSoftware//Brave-Browser//Application//brave.exe')
