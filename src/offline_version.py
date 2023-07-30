@@ -54,7 +54,7 @@ while True:
                 subprocess.call('Notepad.exe')
             if cmd == 'new tab' or cmd == 'newtab':
                 pyautogui.hotkey('ctrlleft', 't')
-            if cmd == 'close' or cmd == 'closed':
+            if cmd == 'close tab' or cmd == 'closed tab':
                 pyautogui.hotkey('ctrlleft', 'w')
             if cmd == 'alter application' or cmd == 'alterapplication':
                 pyautogui.keyDown('altleft')
@@ -64,4 +64,5 @@ while True:
             if cnt == 1:
                 ps.playsound('..//audio//typing.mp3')
                 cnt = 0
-            pyautogui.write(' ' + speech)
+            if speech != 'typing':
+                pyautogui.write(' ' + speech)
