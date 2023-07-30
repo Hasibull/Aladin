@@ -11,7 +11,7 @@ cnt = 0
 
 while True:
     with sr.Microphone() as source:
-        resource.adjust_for_ambient_noise(source, 0.1)
+        resource.adjust_for_ambient_noise(source)
         audio = resource.listen(source)
         speech = str('nothing')
         try:
@@ -61,4 +61,5 @@ while True:
             if cnt == 1:
                 ps.playsound('..//audio//typing.mp3')
                 cnt = 0
-            pyautogui.write(' ' + speech)
+            if speech != 'typing':
+                pyautogui.write(' ' + speech)
